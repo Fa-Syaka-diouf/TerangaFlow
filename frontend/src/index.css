@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+/*
+ * TerangaFlow design tokens (Tailwind v4 CSS-first configuration).
+ * Usage: bg-brand-900, text-ink, bg-surface, text-alert, text-critical…
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-950: #0c3a1e;
+  --color-brand-900: #14532d;
+  --color-brand-800: #166534;
+  --color-brand-600: #16a34a;
+  --color-brand-400: #4ade80;
+  --color-brand-100: #dcfce7;
+  --color-brand-50: #f0fdf4;
+
+  --color-surface: #f8fafc;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+
+  --color-alert: #f59e0b;
+  --color-alert-soft: #fef3c7;
+  --color-critical: #dc2626;
+  --color-critical-soft: #fee2e2;
+  --color-info: #0369a1;
+  --color-info-soft: #e0f2fe;
+
+  /* Earth tone accent — used sparingly (logo mark, sidebar band). */
+  --color-ochre: #c2410c;
+  --color-sand: #f5e9d7;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 3px rgb(15 23 42 / 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface font-sans text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600;
+  }
+}
